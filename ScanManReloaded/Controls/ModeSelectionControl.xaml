@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="530" d:DesignWidth="800">
     <Grid>
-        <Button x:Name="buttonKitting" Content="Kitting" HorizontalAlignment="Left" Margin="60,40,0,0" VerticalAlignment="Top" Width="300" Height="460" Click="buttonKitting_Click"/>
-        <Button x:Name="buttonWIP" Content="WIP" HorizontalAlignment="Left" Margin="440,40,0,0" VerticalAlignment="Top" Width="300" Height="460"/>
+        <Button x:Name="buttonKitting" Content="Kitting" HorizontalAlignment="Left" Margin="60,0,0,0" VerticalAlignment="Center" Width="300" Height="460" Click="buttonKitting_Click"/>
+        <Button x:Name="buttonWIP" Content="WIP" HorizontalAlignment="Left" Margin="440,0,0,0" VerticalAlignment="Center" Width="300" Height="460"/>
     </Grid>
 </UserControl>
