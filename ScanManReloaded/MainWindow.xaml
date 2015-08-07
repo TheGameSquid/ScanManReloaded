@@ -5,31 +5,31 @@
     <Grid x:Name="gridMain">
         <DockPanel x:Name="panelMain" HorizontalAlignment="Center" Height="530" LastChildFill="False" Margin="0,40,0,0" VerticalAlignment="Center" Width="800" Grid.ColumnSpan="2"/>
         <Menu x:Name="menuMain" Height="40" Margin="0,0,0,0"  VerticalAlignment="Top" HorizontalAlignment="Stretch">
-            <MenuItem x:Name="menuItemPrint" Width="40" Height="40">
-                <MenuItem.Icon>
-                    <Image Margin="0,0,0,0" Source="Resources/Yes.png" Width="40" Height="40" />
-                </MenuItem.Icon>
+            <MenuItem x:Name="menuItemPrint" Width="40" Height="40" Margin="0,0,0,0">
+                <MenuItem.Header>
+                    <Image Source="Resources/Images/Yes.png" Width="39" Height="39" Margin="-6,0,0,0"/>    
+                </MenuItem.Header>
             </MenuItem>
             <MenuItem x:Name="menuItemClear" Width="40" Height="40">
                 <MenuItem.Icon>
-                    <Image Margin="0,0,0,0" Source="Resources/Yes.png" Width="40" Height="40" />
+                    <Image Source="Resources/Images/Yes.png" Width="40" Height="40"/>
                 </MenuItem.Icon>
             </MenuItem>
             <MenuItem x:Name="menuItemSettings" Width="40" Height="40">
                 <MenuItem.Icon>
-                    <Image Margin="0,0,0,0" Source="Resources/Yes.png" Width="40" Height="40" />
+                    <Image Source="Resources/Images/Yes.png" Width="40" Height="40"/>
                 </MenuItem.Icon>
             </MenuItem>
             <MenuItem x:Name="menuItemScanner" Width="40" Height="40">
                 <MenuItem.Icon>
-                    <Image Margin="0,0,0,0" Source="Resources/Yes.png" Width="40" Height="40" />
+                    <Image Source="Resources/Images/Yes.png" Width="40" Height="40"/>
                 </MenuItem.Icon>
             </MenuItem>
             <MenuItem x:Name="menuItemMode" Width="40" Height="40" Click="menuItemMode_Click">
-                <MenuItem.Icon>
-                    <Image Margin="0,0,0,0" Source="Resources/Yes.png" Width="40" Height="40" />
-                </MenuItem.Icon>
+                <MenuItem.Header>
+                    <Image Source="Resources/Images/Yes.png" Width="39" Height="39" Margin="-6, 0"/>
+                </MenuItem.Header>
             </MenuItem>
         </Menu>
-    </Grid>        
+    </Grid>
 </Window>

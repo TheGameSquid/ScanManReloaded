@@ -129,7 +129,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Images\Yes.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Change.png" />
     <Resource Include="Resources\Logo.gif" />
