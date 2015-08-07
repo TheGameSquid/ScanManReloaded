@@ -39,10 +39,24 @@ namespace ScanManReloaded.Controls
 
         private void buttonKitting_Click(object sender, RoutedEventArgs e)
         {
+            // Get a handle on the Main window
             DockPanel parent = (DockPanel)this.Parent;
             Grid gridparent = (Grid)parent.Parent;
             MainWindow mainParent = (MainWindow)gridparent.Parent;
+
+            // Change the mode
             mainParent.ChangeMode(new ModeKittingControl());
+        }
+
+        private void buttonWIP_Click(object sender, RoutedEventArgs e)
+        {
+            // Get a handle on the Main window
+            DockPanel parent = (DockPanel)this.Parent;
+            Grid gridparent = (Grid)parent.Parent;
+            MainWindow mainParent = (MainWindow)gridparent.Parent;
+
+            // Change the Mode
+            mainParent.ChangeMode(new ModeRequestControl());
         }
     }
 }

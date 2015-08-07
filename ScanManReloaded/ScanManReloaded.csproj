@@ -89,6 +89,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\ModeRequestControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\ModeSelectionControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -105,6 +109,9 @@
     <Compile Include="Controls\IModeControl.cs" />
     <Compile Include="Controls\ModeKittingControl.xaml.cs">
       <DependentUpon>ModeKittingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ModeRequestControl.xaml.cs">
+      <DependentUpon>ModeRequestControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\ModeSelectionControl.xaml.cs">
       <DependentUpon>ModeSelectionControl.xaml</DependentUpon>
