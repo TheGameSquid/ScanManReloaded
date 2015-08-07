@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="600" Width="800" Loaded="Window_Loaded">
     <Grid x:Name="gridMain">
-        <DockPanel x:Name="panelMain" HorizontalAlignment="Center" Height="530" LastChildFill="False" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="800" Grid.ColumnSpan="2"/>
+        <DockPanel x:Name="panelMain" HorizontalAlignment="Center" Height="530" LastChildFill="False" Margin="0,40,0,0" VerticalAlignment="Center" Width="800" Grid.ColumnSpan="2"/>
         <Menu x:Name="menuMain" Height="40" Margin="0,0,0,0"  VerticalAlignment="Top" HorizontalAlignment="Stretch">
             <MenuItem x:Name="menuItemPrint" Width="40" Height="40">
                 <MenuItem.Icon>
