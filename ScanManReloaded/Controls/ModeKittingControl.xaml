@@ -6,7 +6,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800">
     <Grid>
-        <Label Content="FLOEP" HorizontalAlignment="Left" Margin="191,167,0,0" VerticalAlignment="Top" Height="286" Width="416" FontSize="80"/>
-
+        <TextBox x:Name="textBoxName" HorizontalAlignment="Center" Height="30" Margin="200,178,200,0" TextWrapping="NoWrap" Text="TextBox" VerticalAlignment="Top" Width="400"/>
+        <TextBox x:Name="textBoxNameAD" HorizontalAlignment="Left" Height="30" Margin="336,291,0,0" TextWrapping="NoWrap" Text="TextBox" VerticalAlignment="Top" Width="426" IsEnabled="False"/>
+        <TextBox x:Name="textBoxNameAsset" HorizontalAlignment="Left" Height="30" Margin="140,291,0,0" TextWrapping="NoWrap" Text="TextBox" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="textBoxNameType" HorizontalAlignment="Left" Height="30" Margin="35,291,0,0" TextWrapping="NoWrap" Text="TextBox" VerticalAlignment="Top" Width="50"/>
+        <Label x:Name="labelName" Content="Name" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" Width="400"/>
+        <Label x:Name="labelType" Content="Type" HorizontalAlignment="Center" Margin="35,265,715,0" VerticalAlignment="Top" Width="50"/>
+        <Label x:Name="labelAsset" Content="Asset" HorizontalAlignment="Center" Margin="140,265,510,0" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="labelAD" Content="AD" HorizontalAlignment="Center" Margin="336,265,314,0" VerticalAlignment="Top" Width="150"/>
     </Grid>
 </UserControl>
