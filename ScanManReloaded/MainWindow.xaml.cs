@@ -25,6 +25,42 @@ namespace ScanManReloaded
             InitializeComponent();
         }
 
+        private void BarcodeLogic(string strBarcode)
+        {
+            Barcode barcode = new Barcode(strBarcode);
+            if (barcode.Command == "CM")
+            {
+                switch (barcode.Value)
+                {
+                    case "CLS":
+                        activeControl.Clear();
+                        break;
+                    case "PRN":
+                        activeControl.Print();
+                        break;
+                }
+            }
+            else if (barcode.Command == "CM")
+            {
+                switch (barcode.Value)
+                {
+                    case "SELECTION":
+                        ChangeMode(new ModeSelectionControl());
+                        break;
+                    case "WIP":
+                        ChangeMode(new ModeRequestControl());
+                        break;
+                    case "KITTING":
+                        ChangeMode(new ModeKittingControl());
+                        break;
+                }
+            }
+            else
+            {
+                activeControl.BarcodeLogic(barcode);
+            }
+        }
+
         public void ChangeMode(Control modeControl)
         {
             // Remove all controls on the main panel
