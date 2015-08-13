@@ -28,6 +28,8 @@ namespace ScanManReloaded
         private void BarcodeLogic(string strBarcode)
         {
             Barcode barcode = new Barcode(strBarcode);
+
+            // It's a general command
             if (barcode.Command == "CM")
             {
                 switch (barcode.Value)
@@ -40,7 +42,9 @@ namespace ScanManReloaded
                         break;
                 }
             }
-            else if (barcode.Command == "CM")
+
+            // It's a mode-selection command
+            else if (barcode.Command == "MD")
             {
                 switch (barcode.Value)
                 {
@@ -55,6 +59,8 @@ namespace ScanManReloaded
                         break;
                 }
             }
+
+            // Pass it on the the Active ModeControl
             else
             {
                 activeControl.BarcodeLogic(barcode);
@@ -79,6 +85,16 @@ namespace ScanManReloaded
         private void menuItemMode_Click(object sender, RoutedEventArgs e)
         {
             ChangeMode(new ModeSelectionControl());
+        }
+
+        private void menuItemPrint_Click(object sender, RoutedEventArgs e)
+        {
+            this.activeControl.Print();
+        }
+
+        private void menuItemClear_Click(object sender, RoutedEventArgs e)
+        {
+            this.activeControl.Clear();
         }
     }
 }

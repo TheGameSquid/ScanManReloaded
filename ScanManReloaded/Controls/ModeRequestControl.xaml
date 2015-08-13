@@ -6,9 +6,9 @@
              mc:Ignorable="d" 
               d:DesignHeight="600" d:DesignWidth="800">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="200,50,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" FontSize="16"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="200,90,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" FontSize="16"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="200,130,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" FontSize="16"/>
+        <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="30" Margin="200,50,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" FontSize="16"/>
+        <TextBox x:Name="textBoxReason" HorizontalAlignment="Left" Height="30" Margin="200,90,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" FontSize="16"/>
+        <TextBox x:Name="textBoxDepartment" HorizontalAlignment="Left" Height="30" Margin="200,130,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" FontSize="16"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="95,50,0,0" VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Right" FontSize="16"/>
         <Label Content="Reason" HorizontalAlignment="Left" Margin="95,90,0,0" VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Right" FontSize="16"/>
         <Label Content="Department" HorizontalAlignment="Left" Margin="95,130,0,0" VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Right" FontSize="16"/>
@@ -46,7 +46,7 @@
                         <GridViewColumn Width="50">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="X" Click="DeleteAsset" CommandParameter="{Binding}"/>
+                                    <Button Content="X" Click="RemoveAsset" CommandParameter="{Binding}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>    

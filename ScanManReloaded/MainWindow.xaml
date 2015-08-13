@@ -15,12 +15,12 @@
                     <Image Source="Resources/Images/Refresh.png" Width="39" Height="39" Margin="-6,0,0,0"/>
                 </MenuItem.Header>
             </MenuItem>
-            <MenuItem x:Name="menuItemPrint" Width="40" Height="40" Margin="0,0,0,0">
+            <MenuItem x:Name="menuItemPrint" Width="40" Height="40" Margin="0,0,0,0" Click="menuItemPrint_Click">
                 <MenuItem.Header>
                     <Image Source="Resources/Images/Printer.png" Width="39" Height="39" Margin="-6,0,0,0"/>    
                 </MenuItem.Header>
             </MenuItem>
-            <MenuItem x:Name="menuItemClear" Width="40" Height="40">
+            <MenuItem x:Name="menuItemClear" Width="40" Height="40" Click="menuItemClear_Click">
                 <MenuItem.Header>
                     <Image Source="Resources/Images/Trash.png" Width="39" Height="39" Margin="-6,0,0,0"/>
                 </MenuItem.Header>
