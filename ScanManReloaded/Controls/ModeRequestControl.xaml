@@ -6,9 +6,9 @@
              mc:Ignorable="d" 
               d:DesignHeight="600" d:DesignWidth="800">
     <Grid>
-        <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="30" Margin="200,50,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" FontSize="16"/>
-        <TextBox x:Name="textBoxReason" HorizontalAlignment="Left" Height="30" Margin="200,90,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" FontSize="16"/>
-        <TextBox x:Name="textBoxDepartment" HorizontalAlignment="Left" Height="30" Margin="200,130,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" FontSize="16"/>
+        <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="30" Margin="200,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" FontSize="16"/>
+        <TextBox x:Name="textBoxReason" HorizontalAlignment="Left" Height="30" Margin="200,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" FontSize="16"/>
+        <TextBox x:Name="textBoxDepartment" HorizontalAlignment="Left" Height="30" Margin="200,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" FontSize="16"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="95,50,0,0" VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Right" FontSize="16"/>
         <Label Content="Reason" HorizontalAlignment="Left" Margin="95,90,0,0" VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Right" FontSize="16"/>
         <Label Content="Department" HorizontalAlignment="Left" Margin="95,130,0,0" VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Right" FontSize="16"/>
@@ -25,21 +25,21 @@
                         <GridViewColumn Header="Type" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Text="{Binding Type}" Margin="-6, 0, -6, 0" FontSize="16" Width="100"/>
+                                    <TextBox Text="{Binding Type}" Margin="-6, 0, -6, 0" FontSize="16" Width="100" IsEnabled="False"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="Name" Width="180">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Text="{Binding Name}" Margin="0, 0, 0, 0" Width="160" FontSize="16"/>
+                                    <TextBox Text="{Binding Name}" Margin="0, 0, 0, 0" Width="160" FontSize="16" IsEnabled="False"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="Active Directory" Width="500">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBox Text="{Binding ADPath}" Margin="0, 0, 0, 0" Width="480" FontSize="16"/>
+                                    <TextBox Text="{Binding ADPath}" Margin="0, 0, 0, 0" Width="480" FontSize="16" IsEnabled="False"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

@@ -105,7 +105,7 @@ namespace ScanManReloaded.Controls
 
             // Set it up using fluent notation
             gc.SetMargins(new Margins(50, 100, 0, 0))
-                .SetDocumentTitle("Test document")
+                .SetDocumentTitle("Request")
                 .SetPaperSize(PaperKind.A4);
 
             // Create converter
@@ -190,6 +190,18 @@ namespace ScanManReloaded.Controls
             Button button = sender as Button;
             Asset asset = button.CommandParameter as Asset;
             this.assetList.Remove(asset);
+        }
+
+        private bool ValidateForm()
+        { 
+            if((assetList.Count > 0)
+                && (textBoxName.Text != "")
+                && (textBoxDepartment.Text != "")
+                && (textBoxReason.Text != ""))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
