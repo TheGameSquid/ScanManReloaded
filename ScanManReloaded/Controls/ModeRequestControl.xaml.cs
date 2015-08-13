@@ -48,7 +48,6 @@ namespace ScanManReloaded.Controls
 
         public void BarcodeLogic(Barcode barcode)
         {
-            //
             switch (barcode.Command) 
             { 
                 case "TP":
@@ -97,41 +96,6 @@ namespace ScanManReloaded.Controls
             Button button = sender as Button;
             Asset asset = button.CommandParameter as Asset;
             this.assetList.Remove(asset);
-        }
-
-        private void OnAssetTextChanged(object sender, EventArgs e)
-        {
-            TextBox textbox = sender as TextBox;
-            ListViewItem parentItem = textbox.FindParent<ListViewItem>();
-            Asset asset = parentItem.Content as Asset;
-            asset = assetList.Single<Asset>(a => a == asset);
-            asset.Name = textbox.Text;
-
-            textbox.Background = new SolidColorBrush(Colors.Red);
-            
-            using (PrincipalContext ctx = new PrincipalContext(ContextType.Domain))
-            {
-                // Find a computer
-                ComputerPrincipal computer = ComputerPrincipal.FindByIdentity(ctx, String.Format("{0}{1}", asset.Type, asset.Name));
-                if (computer != null)
-                {
-                    asset.ADPath = computer.DistinguishedName;
-                    //if (asset.ADPath.Contains(Properties.Settings.Default.ErrorOU))
-                    //{
-                    //    txtLocationAd.BackColor = System.Drawing.Color.OrangeRed;
-                    //}
-                }
-                else
-                {
-                    asset.ADPath = "Not Found!";
-                }
-            }
-
-            textbox.Background = new SolidColorBrush(Colors.Red);
-            parentItem.Background = new SolidColorBrush(Colors.Red);
-
-            //ICollectionView view = CollectionViewSource.GetDefaultView(assetList);
-            //view.Refresh();
         }
     }
 }
