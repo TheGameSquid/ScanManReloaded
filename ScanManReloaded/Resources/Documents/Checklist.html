@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <img id="logo" src="./NMBS.png" />
+    <h1>Staging Checklist:</h1>
+
+    Computer Name: <span id="computername">Computer Name:</span><br />
+    Computer Type: <span id="computertype">Computer Type:</span><br />
+    Engineer Name: <span id="engineername">Engineer Name:</span><br />
+    
+    <table border=1 id="checklist-pt1">
+        <thead>
+            <tr>
+                <th>Checked?</th>
+                <th>1. Pre-imaging</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>Make sure computer object is created in AD.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table border=1 id="checklist-pt2">
+        <thead>
+            <tr>
+                <th>Checked?</th>
+                <th>2. Imaging</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>Pick the correct image for the device</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>Type correct PC name (PC********* or PO*********)</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>Select optional software when required</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>After Image has finished, resolve any yellow errors that might have occured</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>Notify the image engineer in case of red errors (possible restage)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table border=1 id="checklist-pt3">
+        <thead>
+            <tr>
+                <th>Checked?</th>
+                <th>3. Domain join failed/offline staging</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>Join MSNET domain (Disk\Scripts\RunAsAdmin\1 - JoinDomain.cmd)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Reboot while connected to network cable</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table border=1 id="checklist-pt4">
+        <thead>
+            <tr>
+                <th>Checked?</th>
+                <th>4. Domain join was succesful</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>Log on with your ADM_ acount</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Check if following MSNET\ groups are member of the Administrators group: YPTODTMNGTG ; HICTCCADMINSG ; HICTLSADMINSG ; HICTOCADMINSG</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Check if BSM specific admin group is also added</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Make sure the hostname corresponds to the assetnumber</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table border=1 id="checklist-pt5">
+        <thead>
+            <tr>
+                <th>Checked?</th>
+                <th>5. Verification</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>Check if standard software is installed</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Standard Software: SAP</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Standard Software: Office 2010</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Standard Software: McAfee Antivirus</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Standard Software: Oracle</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Standard Software: Adobe Reader</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    Standard Software:
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Standard Laptop Software:</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Make sure Software Center is installed</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>CMD: ipconfig /release</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Shutdown Computer and place this document in the correct box</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Write the date of staging on the box</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
