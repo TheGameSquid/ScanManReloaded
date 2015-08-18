@@ -35,13 +35,6 @@ namespace ScanManReloaded.Controls
             InitializeComponent();
             assetList = new ObservableCollection<Asset>();
 
-            assetList.Add(new Asset("PO"));
-            SetAsset("130021498");
-            assetList.Add(new Asset("PO", "130021498"));
-            assetList.Add(new Asset("PO", "130021498b"));
-            assetList.Add(new Asset("PO", "130021999"));
-            assetList.Add(new Asset("PO", "130021000"));
-
             this.testList.DataContext = assetList;
         }
 
