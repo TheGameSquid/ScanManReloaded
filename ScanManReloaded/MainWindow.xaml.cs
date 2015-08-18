@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,10 +20,52 @@ namespace ScanManReloaded
     public partial class MainWindow : Window
     {
         private IModeControl activeControl;
+        private SerialPort barcodeReader;
 
         public MainWindow()
         {
             InitializeComponent();
+            GetScanner();
+        }
+
+        private void GetScanner()
+        {
+            try
+            {
+                barcodeReader = new SerialPort("COM3");
+                if (!barcodeReader.IsOpen)
+                {
+                    barcodeReader.Open();
+                    barcodeReader.DataReceived += new SerialDataReceivedEventHandler(Scanner_DataReceived);
+                    this.menuItemScanner.Header = new System.Windows.Controls.Image 
+                    { 
+                        Source = new BitmapImage(new Uri("Resources/Images/Yes.png", UriKind.Relative)),
+                        Width = 39,
+                        Height= 39,
+                        Margin= new System.Windows.Thickness(-6, 0, 0, 0)
+                    };
+                }
+
+            }
+            catch
+            {
+                this.menuItemScanner.Header = new System.Windows.Controls.Image
+                {
+                    Source = new BitmapImage(new Uri("Resources/Images/No.png", UriKind.Relative)),
+                    Width = 39,
+                    Height = 39,
+                    Margin = new System.Windows.Thickness(-6, 0, 0, 0)
+                };
+            }
+        }
+
+        private void Scanner_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            SerialPort port = (SerialPort)sender;
+            string input = port.ReadExisting();
+            //int len = inp.Length;
+            this.Dispatcher.Invoke(delegate { BarcodeLogic(input.Remove(input.Length - 1)); });
+            port.DiscardInBuffer();
         }
 
         private void BarcodeLogic(string strBarcode)

@@ -5,11 +5,19 @@ using System.ComponentModel;
 
 namespace ScanManReloaded
 {
+    public enum AssetState
+    { 
+        Incomplete,
+        Unknown,
+        Known
+    }
+
     public class Asset
     {
         public string Type { get; set; }
         public string Name { get; set; }
         public string ADPath { get; set; }
+        public AssetState State { get; set; }
 
         public Asset()
         {
@@ -23,6 +31,15 @@ namespace ScanManReloaded
             this.Type = type;
             this.Name = "";
             this.ADPath = "";
+            this.State = AssetState.Incomplete;
+        }
+
+        public Asset(string type, AssetState state)
+        {
+            this.Type = type;
+            this.Name = "";
+            this.ADPath = "";
+            this.State = state;
         }
 
         public Asset(string type, string name)
@@ -30,6 +47,7 @@ namespace ScanManReloaded
             this.Type = type;
             this.Name = name;
             this.ADPath = "";
+            this.State = AssetState.Incomplete;
         }
     }
 }

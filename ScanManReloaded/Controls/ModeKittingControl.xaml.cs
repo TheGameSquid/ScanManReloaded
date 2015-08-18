@@ -79,7 +79,11 @@ namespace ScanManReloaded.Controls
 
         public void Clear()
         {
-            //
+            // Clear all info on-screen
+            this.textBoxName.Clear();
+            this.textBoxNameAD.Clear();
+            this.textBoxNameAsset.Clear();
+            this.textBoxNameType.Clear();
         }
 
         public void Print()

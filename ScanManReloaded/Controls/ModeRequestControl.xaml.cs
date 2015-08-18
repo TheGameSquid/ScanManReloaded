@@ -52,9 +52,16 @@ namespace ScanManReloaded.Controls
 
         public void Print()
         {
-            HtmlDocument docHtml = CreateHtml();
-            byte[] pdfBuf = CreatePDF(docHtml);
-            File.WriteAllBytes(String.Format("C:\\Data\\Data-{0}.pdf", Guid.NewGuid()), pdfBuf);
+            if (ValidateForm())
+            {
+                HtmlDocument docHtml = CreateHtml();
+                byte[] pdfBuf = CreatePDF(docHtml);
+                File.WriteAllBytes(String.Format("C:\\Data\\Data-{0}.pdf", Guid.NewGuid()), pdfBuf);
+            }
+            else
+            {
+                MessageBox.Show("Some items on the list are still incomplete. Please fill out asset-types and asset-names before printing!", "Form Validation", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
         }
 
         private HtmlDocument CreateHtml()
@@ -83,7 +90,7 @@ namespace ScanManReloaded.Controls
             htmlDoc.DocumentNode.SelectSingleNode("//span[@id='reason']").InnerHtml = this.textBoxReason.Text;
 
             // Insert the DateTime
-            htmlDoc.DocumentNode.SelectSingleNode("//span[@id='datetime']").InnerHtml = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss");
+            htmlDoc.DocumentNode.SelectSingleNode("//span[@id='datetime']").InnerHtml = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
 
             // Add the items of the list to the table
             foreach (Asset asset in this.testList.Items)
@@ -92,8 +99,6 @@ namespace ScanManReloaded.Controls
                 listItem.InnerHtml = String.Format("<tr><td>{0}</td><td>{1}</td><td>{2}</td></tr>", asset.Type, asset.Name, asset.ADPath);
                 htmlDoc.DocumentNode.SelectSingleNode("//tbody[@id='assetsbody']").AppendChild(listItem);
             }
-
-            htmlDoc.Save("kfkgjfgjfgjgf.html");
 
             return htmlDoc;
         }
@@ -155,7 +160,7 @@ namespace ScanManReloaded.Controls
 
         private void AddAsset(string type)
         {
-            this.assetList.Add(new Asset(type));
+            this.assetList.Add(new Asset(type, AssetState.Incomplete));
         }
 
         private void SetAsset(string name)
@@ -166,7 +171,10 @@ namespace ScanManReloaded.Controls
             }
             else
             {
-                assetList.Last<Asset>().Name = name;
+                string type = assetList.Last<Asset>().Type;
+                Asset asset = new Asset(type, name);
+                assetList.RemoveAt(assetList.Count - 1);
+                assetList.Add(asset);
 
                 // Find the CN of a given asset
                 using (PrincipalContext ctx = new PrincipalContext(ContextType.Domain))
@@ -176,10 +184,12 @@ namespace ScanManReloaded.Controls
                     if (computer != null)
                     {
                         assetList.Last<Asset>().ADPath = computer.DistinguishedName;
+                        assetList.Last<Asset>().State = AssetState.Known;
                     }
                     else
                     {
                         assetList.Last<Asset>().ADPath = "Not Found!";
+                        assetList.Last<Asset>().State = AssetState.Unknown;
                     }
                 }
             }
@@ -197,7 +207,8 @@ namespace ScanManReloaded.Controls
             if((assetList.Count > 0)
                 && (textBoxName.Text != "")
                 && (textBoxDepartment.Text != "")
-                && (textBoxReason.Text != ""))
+                && (textBoxReason.Text != "")
+                && !assetList.Any<Asset>(a => a.State == AssetState.Incomplete))
             {
                 return true;
             }
